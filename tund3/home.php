@@ -34,24 +34,20 @@
   
   //tänane päev
   $today = new DateTime("now");
-  
   //1. mitu päeva on möödunud semestri algusest(formindage päevade arvuna)
   $semesterkestus= $semesterstart->diff($today);
   $semesterkestusdays = $semesterkestus->format("%r%a");
-  
   //2. kontrollida kas semestri alguse ja tänase päeva vahe on negatiivne,
   //siis pole semester ju alganud
   $semesterActive = "semester käib";
   if($semesterkestusdays < 0 ){
 	$semesterActive = "uus semester pole alganud";
   }	  
-  
   //3. kas semester on lõppenud
   $semesteOver  = "semester käib";
   if($semesterActive > $semesterdurationdays  ){
 	$semesterOver = "semester on läbi";
   }	 
-  
   //4. mitu % õppetööst on tehtud
   $protsent=(100*$semesterkestusdays) / $semesterdurationdays;
   
@@ -71,7 +67,7 @@
   <p>Leht on loodud veebiprogrammeerimise kursuse raames <a href="https://www.tlu.ee">Tallinna Ülikooli</a> digitehnoloogiate instituudis.</p>
   <p>See rida on sisestatud kodutööna 03.09.2020</p>
   <p>Andmete kättesaamine : successs</p>
-  <p>Andmete kuvamine : successs</p>
+  <p>Andmete kuvamine : fail</p>
   
   <p>Lehe avamise hetkel oli : <?php echo $fulltimenow; ?>.</p>
   <p><?php echo "Parajasti on " .$partofday ."."; ?></p>
